@@ -2,7 +2,7 @@ class ForumPostsController < ApplicationController
     def create
         @thread = ForumThread.find(params[:forum_thread_id])
         @post = ForumPost.new(resource_params)
-        @post.user = User.first
+        @post.user = current_user
         @post.forum_thread = @thread
 
         if @post.save
