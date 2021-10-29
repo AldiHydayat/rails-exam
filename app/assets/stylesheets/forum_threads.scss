@@ -1,0 +1,23 @@
+// Place all the styles related to the forum_threads controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.thread {
+  margin-bottom: 20px;
+  border-bottom: 3px solid gray;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  .meta {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .content {
+    margin-bottom: 10px;
+  }
+
+  .count {
+    float: right;
+  }
+}

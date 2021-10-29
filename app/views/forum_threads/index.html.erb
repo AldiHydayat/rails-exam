@@ -1,0 +1,23 @@
+<div class="container mt-3  ">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <% @threads.each do |thread| %>
+                <div class="thread">
+                    <h3> <%= thread.title.titleize %> </h3>
+
+                    <div class="meta">
+                        <%= thread.created_at.strftime("%d %B %Y") %> oleh <%= thread.user.name %>
+                    </div>
+
+                    <div class="content">
+                        <%= thread.content %>
+                    </div>
+
+                    <div class="count">
+                        <%= thread.forum_posts.count %> Obrolan
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
