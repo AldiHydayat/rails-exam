@@ -12,4 +12,18 @@ class ForumThreadsController < ApplicationController
         @thread = ForumThread.new
     end
     
+    def create
+        @thread = ForumThread.new(resource_params)
+        @thread.user = User.first
+        @thread.save
+
+        redirect_to root_path
+    end
+    
+    private
+
+    def resource_params
+        params.require(:forum_thread).permit(:title, :content)
+    end
+    
 end
