@@ -1,0 +1,33 @@
+<div class="container mt-3  ">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="thread">
+                <h3> <%= @thread.title.titleize %> </h3>
+
+                <div class="meta">
+                    <%= I18n.l(@thread.created_at.to_date) %> oleh <%= @thread.user.name %>
+                </div>
+
+                <div class="content">
+                    <%= @thread.content %>
+                </div>
+
+                <div class="count">
+                    <%= @thread.forum_posts.count %> Obrolan
+                </div>
+            </div>
+
+            <% @thread.forum_posts.each do |post| %>
+                <div class="thread">
+                    <div class="meta">
+                        <%= I18n.l(post.created_at.to_date) %> oleh <%= post.user.name %>
+                    </div>
+
+                    <div class="content">
+                        <%= post.content %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

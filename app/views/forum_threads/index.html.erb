@@ -3,7 +3,7 @@
         <div class="col-md-6 offset-md-3">
             <% @threads.each do |thread| %>
                 <div class="thread">
-                    <h3> <%= thread.title.titleize %> </h3>
+                    <h3> <%= link_to thread.title.titleize, forum_thread_path(thread) %> </h3>
 
                     <div class="meta">
                         <%= I18n.l(thread.created_at.to_date) %> oleh <%= thread.user.name %>
