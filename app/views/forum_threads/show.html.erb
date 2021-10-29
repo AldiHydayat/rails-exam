@@ -39,14 +39,16 @@
                     <% end %>
                 </div>
             <% end %>
-            <%= form_for [@thread, @post] do |f| %>
-                <div class="mb-3">
-                    <%= f.label :content, class: 'form-label' %>
-                    <%= f.text_area :content, rows: 8 , class: 'form-control' %>
-                </div>
-                <div class="mb-3">
-                    <%= f.submit "Buat", class: 'btn btn-primary' %>
-                </div>
+            <% if user_signed_in? %>
+                <%= form_for [@thread, @post] do |f| %>
+                    <div class="mb-3">
+                        <%= f.label :content, class: 'form-label' %>
+                        <%= f.text_area :content, rows: 8 , class: 'form-control' %>
+                    </div>
+                    <div class="mb-3">
+                        <%= f.submit "Buat", class: 'btn btn-primary' %>
+                    </div>
+                <% end %>
             <% end %>
         </div>
     </div>
