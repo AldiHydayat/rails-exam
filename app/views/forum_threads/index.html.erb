@@ -6,7 +6,7 @@
                     <h3> <%= thread.title.titleize %> </h3>
 
                     <div class="meta">
-                        <%= thread.created_at.strftime("%d %B %Y") %> oleh <%= thread.user.name %>
+                        <%= I18n.l(thread.created_at.to_date) %> oleh <%= thread.user.name %>
                     </div>
 
                     <div class="content">
