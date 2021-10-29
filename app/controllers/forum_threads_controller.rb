@@ -1,11 +1,12 @@
 class ForumThreadsController < ApplicationController
     def index
-        @threads = ForumThread.all
+        @threads = ForumThread.all.order(id: :desc)
     end
     
 
     def show
         @thread = ForumThread.find(params[:id])
+        @post = ForumPost.new
     end
 
     def new
