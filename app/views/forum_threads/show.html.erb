@@ -32,6 +32,13 @@
                 <% else %>
                 <h4>Jadilah yang pertama menanggapi</h4>
             <% end %>
+            <% if @post.errors.any? %>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <% @post.errors.full_messages.each do |error| %>
+                        <%= error %> <br>
+                    <% end %>
+                </div>
+            <% end %>
             <%= form_for [@thread, @post] do |f| %>
                 <div class="mb-3">
                     <%= f.label :content, class: 'form-label' %>
